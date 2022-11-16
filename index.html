@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fdcb6e;
+      padding: 20px;
+      font-family: Arial;
+    }
+
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 10px -16px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row>.column {
+      padding: 8px;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 33.33%;
+      display: none;
+      /* Hide all elements by default */
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 10px;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
+
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #ddd;
+    }
+
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
+
+    div.background {
+      background: url(https://media.istockphoto.com/id/1287014057/photo/indonesian-traditional-foods-served-on-the-table.jpg?s=612x612&w=0&k=20&c=aH-KuO2Fwjv2M_k7WU-d_2UF1mrtxDIPmYqyUwsqq1s=) repeat;
+      border: 2px solid black;
+    }
+
+    div.transbox {
+      margin: 50px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity: 0.8;
+    }
+
+    div.transbox p {
+      margin: 10%;
+      font-weight: bold;
+      color: blanchedalmond;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MAIN (Center website) -->
+  <div class="main">
+
+    <h1>SVR Restaurant</h1>
+    <hr>
+    <h2>MENU</h2>
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')">All</button>
+      <button class="btn" onclick="filterSelection('nature')">Breakfast</button>
+      <button class="btn" onclick="filterSelection('cars')">Lunch</button>
+      <button class="btn" onclick="filterSelection('people')">Dinner</button>
+    </div>
+    <div class="background">
+      <div class="transbox">
+        <h1>Best food for the best community.</h2>
+      </div>
+    </div>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+      <div class="column nature">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1142365429/photo/healthy-vegan-bowl-smoothie-and-woman-in-jeans-square-crop.jpg?s=612x612&w=0&k=20&c=YRAR-d_KlWWtvOZjFH-mgsxb9dshxtbBwAjgqOJ2xh0="
+            alt="Mountains" style="width:100%">
+          <h4>English Breakfast</h4>
+          <p>£3.49</p>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1397362345/photo/pasta-seafood-pasta-spaghetti-with-shrimp-cream-sauce-and-basil-sprinkle-with-cheese-top-view.jpg?s=612x612&w=0&k=20&c=c5720p5h59NviwJpp7OfNthQZAwuX4hXOb56cllqWtI="
+            alt="Lights" style="width:100%">
+          <h4>Scottish Porridge</h4>
+          <p>£3.29</p>
+        </div>
+      </div>
+      <div class="column nature">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1178010628/photo/man-eating-vietnamese-noodle-curry-with-chopsticks-square-crop.jpg?s=612x612&w=0&k=20&c=LQwG72Xo4bhJSITsjeJ0XU3rRaUolojH-aOqitL7n0E="
+            alt="Nature" style="width:100%">
+          <h4>Crumpet</h4>
+          <p>£4.49</p>
+        </div>
+      </div>
+
+      <div class="column cars">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1060869802/photo/chef-rub-chicken-with-fruit-spices-close-up-background-for-recipe-book-menu-instagram.jpg?s=612x612&w=0&k=20&c=_WwCwmWi6xMJcKTBo8EvYt6Red_EBQhGGWxOHAiLGH0="
+            alt="Car" style="width:100%">
+          <h4>Roast chicken</h4>
+          <p>£5.99</p>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1432846715/photo/another-taste-of-turkish-kitchen.jpg?s=612x612&w=0&k=20&c=fTl52njHLBpevFeSnQjVeZFXaHCuqekPyhtu9AQ0qAQ="
+            alt="Car" style="width:100%">
+          <h4>Fish pie</h4>
+          <p>£5.49</p>
+        </div>
+      </div>
+      <div class="column cars">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1183594269/photo/christmas-food-smorgasbord.jpg?s=612x612&w=0&k=20&c=u1Kgk4ajbUB2EWMHRDJpLsxDw00dPmsoasRvgjw6BEw="
+            alt="Car" style="width:100%">
+          <h4>Lamb</h4>
+          <p>£7.99</p>
+        </div>
+      </div>
+
+      <div class="column people">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1209008290/photo/hand-adding-parsley-into-frying-pan-with-vegetables.jpg?s=612x612&w=0&k=20&c=aHvbCQaP_XDBFuyV0XNC_FGxwzxxgku2xyE3Z7s0dfc="
+            alt="Car" style="width:100%">
+          <h4>Pork</h4>
+          <p>£6.88</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1063009930/photo/professional-chef-prepares-shrimps-with-greens.jpg?s=612x612&w=0&k=20&c=DERvwVtH6KAJh_S3wDLDLJTj8VbNBDr1jS3i3G24TNM="
+            alt="Car" style="width:100%">
+          <h4>Meat & Two eggs</h4>
+          <p>£4.99</p>
+        </div>
+      </div>
+      <div class="column people">
+        <div class="content">
+          <img
+            src="https://media.istockphoto.com/id/1397362373/photo/grilled-beef-steak-with-grilled-vegetables-and-salad-leaves-served-on-black-plate-on-black.jpg?s=612x612&w=0&k=20&c=yZlFHnjO15-FGyH3amOf7FxiGwDzmcsMc38bYHMGj14="
+            alt="Car" style="width:100%">
+          <h4>Bacon</h4>
+          <p>£5.49</p>
+        </div>
+      </div>
+      <!-- END GRID -->
+    </div>
+
+    <!-- END MAIN -->
+  </div>
+  </div>
+  </div>
+
+  <script>
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("column");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+
+
+    // Add active class to the current button (highlight it)
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+
+</body>
+
+</html>
